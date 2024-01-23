@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const request = require('request');
-const url = 'http://loripsum.net/api';
+const url = process.argv[2];
 const fs = require('fs'); // For File IO
 const file = process.argv[3];
 
