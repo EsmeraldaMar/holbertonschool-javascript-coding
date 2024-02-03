@@ -1,5 +1,6 @@
 // Import the modules
 const fs = require('fs');
+// eslint-disable-next-line no-unused-vars
 const path = require('path');
 
 // Define the countStudents function that accepts a path to the database file
