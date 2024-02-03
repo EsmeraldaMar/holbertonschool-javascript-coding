@@ -9,7 +9,8 @@ async function countStudents(path) {
     const data = await fs.readFile(path, 'utf8');
     const lines = data.split('\n').slice(1).filter((line) => line.trim()); // Ignore the header and empty lines
     let totalStudents = 0; // Initialize counter for total students
-    const studentsByField = {}; // Initialize an object to hold counts and names of students by field
+    const studentsByField = {}; // Initialize an object to hold counts 
+    // and names of students by field
 
     // Iterate over each line to process student data
     lines.forEach((line) => {
@@ -41,7 +42,8 @@ const app = http.createServer(async (req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' }); // Set response header
     res.end('Hello Holberton School!'); // Send a response for the root path
   } else if (req.url === '/students') {
-    res.writeHead(200, { 'Content-Type': 'text/plain' }); // Set response header for /students path
+    res.writeHead(200, { 'Content-Type': 'text/plain' }); 
+    // Set response header for /students path
     try {
       const studentsInfo = await countStudents(process.argv[2]); // Await the countStudents function result
       res.write(`This is the list of our students\n${studentsInfo}`); // Write the student information to the response
