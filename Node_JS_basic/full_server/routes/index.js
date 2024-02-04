@@ -9,12 +9,14 @@ const AppController = require('../controllers/AppController');
 // Import StudentsController to handle requests related to students information
 const StudentsController = require('../controllers/StudentsController');
 
-// Define a route for the homepage ('/') and delegate handling to the getHomepage method of AppController
+// Define a route for the homepage ('/') and delegate handling
+// to the getHomepage method of AppController
 router.get('/', (req, res) => {
   AppController.getHomepage(req, res);
 });
 
-// Define a route for getting all students ('/students') and delegate handling to the getAllStudents method of StudentsController
+// Define a route for getting all students ('/students')
+// and delegate handling to the getAllStudents method of StudentsController
 router.get('/students', (req, res) => {
   StudentsController.getAllStudents(req, res);
 });

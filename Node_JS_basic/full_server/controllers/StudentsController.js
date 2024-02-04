@@ -25,13 +25,15 @@ class StudentsController {
     try {
       // Get the major from request parameters and convert it to uppercase
       const major = req.params.major.toUpperCase();
-      // Check if the major is valid (CS or SWE), if not, send a 500 status code with an error message
+      // Check if the major is valid (CS or SWE),
+      // if not, send a 500 status code with an error message
       if (!['CS', 'SWE'].includes(major)) {
         return res.status(500).send('Major parameter must be CS or SWE');
       }
       // Await the promise returned by readDatabase for the database path provided via command line
       const database = await readDatabase(process.argv[2]);
-      // Check if the major exists in the database, if not, send a 500 status code with an error message
+      // Check if the major exists in the database,
+      // if not, send a 500 status code with an error message
       if (!database[major]) {
         return res.status(500).send(`Major ${major} does not exist`);
       }

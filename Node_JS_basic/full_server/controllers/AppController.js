@@ -2,7 +2,7 @@
 class AppController {
   // define a static method
   // Static methods can be called directly on the class itself, without instantiating it
-  // This method takes two parameters, req and res, which represent 
+  // This method takes two parameters, req and res, which represent
   // the HTTP request and response objects
   static getHomepage(req, res) {
     // Send a 200 OK HTTP status code and a text response 'Hello Holberton School!' to the client

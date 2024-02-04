@@ -1,11 +1,10 @@
 // import module needed
 const fs = require('fs');
-const { resolve } = require('path');
 
 // define function to readDb
 function readDatabase(filepath) {
   // return new promise tha thandles async func
-  return new Promise((resolce, reject) => {
+  return new Promise((resolve, reject) => {
   // asynchornously read the file given with utf8 encoding
     fs.readFile(filepath, 'utf-8', (err, data) => {
       // if err occurs, handle error, reject promise
@@ -14,7 +13,7 @@ function readDatabase(filepath) {
       } else {
         try {
         // split the file content by newline char to get array
-          const lines = data.split('/n');
+          const lines = data.split('\n');
           // skip the header line and keep the rest
           const students = lines.slice(1);
           // initialise empty obj to hold the parsed data
@@ -34,7 +33,7 @@ function readDatabase(filepath) {
             // Add the student's firstname to the array for their field
             result[field].push(firstname);
           });
-
+          console.log(result);
           // Resolve the promise with the aggregarted/summarised data
           resolve(result);
         } catch (error) {
